@@ -33,8 +33,8 @@ class TestPlanetFunctions(unittest.TestCase):
         self.assertEqual(len(self.earth.inventory), len(self.mars.inventory))
 
     def test_unique_item_prices(self):
-        earth_prices = [self.earth.inventory[i].price for i in range(len(self.earth.inventory))]
-        mars_prices = [self.mars.inventory[i].price for i in range(len(self.mars.inventory))]
+        earth_prices = [item.price for item in self.earth.inventory]
+        mars_prices = [item.price for item in self.mars.inventory]
 
         # test inequality of the whole lists
         self.assertNotEqual(earth_prices, mars_prices)

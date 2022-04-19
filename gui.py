@@ -1,5 +1,6 @@
 from tkinter import *
 from solar_wars import *
+import math
 
 """
 To fix:
@@ -10,7 +11,7 @@ To fix:
         wait_window() - see other popups for examples
     -there is some weird behavior where the dividers are on the outside of the
         window instead of on the inside. Figure out what this is/why it happens
-    -fix all the dependencies that have been effed up by implementing PlanetWindow (from here:
+    -fix all the dependencies that have been messed up by implementing PlanetWindow (from here:
         -make a class that creates all the elements the planet buying and selling window,
         since they are not *really* the main windows, and also to easily refresh the planet items, etc.
         when warping)
@@ -187,7 +188,8 @@ class BuyItemPopupWindow(object):
         top=self.top=Toplevel(master)
         planet_item = player.current_location.inventory[item_index]
         if planet_item.price is not None:
-            self.l=Label(top,text='You can afford ' + str(player.cash/planet_item.price) + ' ' + str(planet_item.name))
+            amount_player_can_afford = str(math.floor(player.cash/planet_item.price))
+            self.l=Label(top,text='You can afford ' + amount_player_can_afford + ' ' + str(planet_item.name))
             self.l.grid(row=0,column=0)
             self.e=Entry(top)
             self.e.grid(row=1,column=0)

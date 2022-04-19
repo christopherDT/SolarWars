@@ -32,7 +32,9 @@ To fix:
 
 class Item(object):
 	"""
-	This class makes an Item -- Items are held, bought and sold by ItemCarriers (Players and Planets). They cost a certain amount, and have an associated quantity for each.
+	This class makes an Item -- Items are held, bought and sold by ItemCarriers 
+	(Players and Planets). They cost a certain amount, and have an associated 
+	quantity for each.
 	"""
 	def __init__(self, name):
 		self.name = name
@@ -83,7 +85,8 @@ class Item(object):
 			self.has_item = False
 
 """
-ItemCarriers are those entities that can own, buy, and sell Items, including the Player and all Planets.
+ItemCarriers are those entities that can own, buy, and sell Items, including 
+the Player and all Planets.
 """
 class ItemCarrier(object):
 	def __init__(self, name):
@@ -100,7 +103,8 @@ class ItemCarrier(object):
 		self.weapons = Item('Weapons')
 		self.water = Item('Water')
 
-		self.inventory = [self.fuel, self.dilithium, self.holos, self.ore, self.meds, self.food, self.weapons, self.water]
+		self.inventory = [self.fuel, self.dilithium, self.holos, self.ore, 
+							self.meds, self.food, self.weapons, self.water]
 
 	def add_items(self, item, amount_to_add):
 		self.item.quantity += amount_to_add
@@ -122,7 +126,8 @@ class ItemCarrier(object):
 		return self.inventory[item_index].get_quantity() >= quantity_query
 
 """
-Planets are the locations Players can travel to and from, and each sells items for some particular amount. Each has their own items they specialize in.
+Planets are the locations Players can travel to and from, and each sells items 
+for some particular amount. Each has their own items they specialize in.
 """
 class Planet(ItemCarrier):
 	def __init__(self, name):
@@ -166,7 +171,8 @@ class Planet(ItemCarrier):
 	# 	return self.inventory[item_index].quantity
 
 """
-A Player travels from planet to planet, buying and selling objects. Eventually, they will also be able to engage in special activities at each Planet.
+A Player travels from planet to planet, buying and selling objects. Eventually, 
+they will also be able to engage in special activities at each Planet.
 """
 class Player(ItemCarrier):
 	def __init__(self, name, starting_location, starting_num_of_days):
