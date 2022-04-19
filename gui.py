@@ -10,7 +10,7 @@ To fix:
         wait_window() - see other popups for examples
     -there is some weird behavior where the dividers are on the outside of the
         window instead of on the inside. Figure out what this is/why it happens
-    -fix all the dependencies that have been effed up by implementing PlanetWindow (from here:
+    -fix all the dependencies that have been messed up by implementing PlanetWindow (from here:
         -make a class that creates all the elements the planet buying and selling window,
         since they are not *really* the main windows, and also to easily refresh the planet items, etc.
         when warping)
