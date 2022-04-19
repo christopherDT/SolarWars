@@ -3,7 +3,7 @@ from solar_wars import *
 
 """
 To fix:
-    -buy and sell buttons are both jacked up. probably has to do with the interdependence between different 
+    -buy and sell buttons are both messed up. probably has to do with the interdependence between different 
         widgets in the planet  window - buy and sell buttons need to make a call to refresh the status bar, etc.
         -this would be a good time to implement a global refresh function, whatever that would look like 
     -make sure the destruction behavior of WarpWindow executes properly - might need to implement
